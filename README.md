@@ -5,7 +5,7 @@ version:  2.0.0
 language: en
 narrator: UK English Female
 
-icon:     https://vib.be/sites/vib.sites.vib.be/files/logo_VIB_noTagline.svg
+icon:     https://styleguide.ugent.be/files/uploads/logo_UGent_EN_RGB_2400_kleur_witbg.png 
 
 comment:  This document shall provide an entire compendium and course on the
           development of Open-courSes with [LiaScript](https://LiaScript.github.io).
@@ -46,7 +46,7 @@ edition:  1st
 orcid:    [@0](@1)<!--class="orcid-logo-for-author-list"
 -->
 
-# Course Title
+# Preserving data at UGent
 
 <section>
 
