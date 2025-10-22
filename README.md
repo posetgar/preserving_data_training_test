@@ -143,7 +143,8 @@ Preserving means more that simply not deleting data. **Preservation means**:
 
 This course is licensed under a [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.en). Please cite it as:
 
-> Oset, Paula. Blablablaba....  
+> Oset, Paula. Blablablaba.... [![DOI](https://sandbox.zenodo.org/badge/1080457223.svg)](https://handle.test.datacite.org/10.5072/zenodo.389626)
+ 
 
 ```json   @JSONLD
 {
