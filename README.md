@@ -148,56 +148,23 @@ This course is licensed under a [CC BY 4.0](https://creativecommons.org/licenses
 
 ```json   @JSONLD
 {
-  "@context": "https://schema.org/",
+  "@context": "http://schema.org",
+  "@id": "https://dev.tess.elixir-europe.org/materials/preserving-data-at-ugent",
   "@type": "LearningResource",
-  "@id": "https://elixir-europe-training.github.io/ELIXIR-TrP-TeSS/",
-  "http://purl.org/dc/terms/conformsTo": {
+  "dct:conformsTo": {
     "@type": "CreativeWork",
     "@id": "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE"
   },
-  "description": "TeSS, how can I help you? This is our interactive hands-on course about efficient use of the ELIXIR TeSS platform.",
-  "keywords": "FAIR, OPEN, Bioinformatics, Teaching, TeSS",
-  "name": "TeSS, how can I help you?",
-  "license": "https://creativecommons.org/licenses/by/4.0/",
-  "educationalLevel": "beginner",
-  "competencyRequired": "none",
-  "teaches": [
-    "search events and material in TeSS via direct and faceted search",
-    "add manually and automatically events and material to TeSS",
-    "extract events and material from TeSS by using TeSS widgets"
-  ],
-  "audience": "training providers",
-  "inLanguage": "en-US",
-  "learningResourceType": [
-    "tutorial"
-  ],
+  "name": "Preserving data at UGent",
+  "url": "https://liascript.github.io/course/?https://raw.githubusercontent.com/posetgar/preserving_data_training_test/refs/heads/main/README.md#1",
+  "description": "This course shortly explains the role of data preservation in research verification and reuse, the main steps to preserve data and helps researchers decide which location is most suitable to preserve their data.",
   "author": [
     {
       "@type": "Person",
-      "name": "Bruna Piereck"
-    },
-    {
-      "@type": "Person",
-      "name": "Olivier Sand"
-    },
-    {
-      "@type": "Person",
-      "name": "Alexander Botzki"
+      "name": "Paula Oset Garcia"
     }
   ],
-  "contributor": [
-    {
-      "@type": "Person",
-      "name": "Yasmine Maes"
-    },
-    {
-      "@type": "Person",
-      "name": "Finn Bacall"
-    },
-    {
-      "@type": "Person",
-      "name": "Munazah Andrabi"
-    }
-  ]
+  "license": "https://spdx.org/licenses/CC-BY-4.0.html"
 }
+
 ```
