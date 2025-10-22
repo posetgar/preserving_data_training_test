@@ -162,7 +162,7 @@ Please cite as:
 
 | Chapter | Title                                                   |
 | :---- | :------------------------------------------------         |
-| 0     | [Get ready for the course, instalation and pre-reading](link) |
+| 0     | [Get ready for the course, instalation and pre-reading](https://liascript.github.io/course/?https://raw.githubusercontent.com/posetgar/preserving_data_training_test/refs/heads/main/chapters/Chapter01.md#1) |
 | 1     | [Chapter title](link)                                             |
 | 2     | [Chapter title](link)                                             |
 | 3     | [Chapter title](link)                                             |

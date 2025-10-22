@@ -4,7 +4,7 @@ title: "Liascript Presentations"
 import: https://raw.githubusercontent.com/LiaScript/CodeRunner/master/README.md
         https://raw.githubusercontent.com/LiaTemplates/BeforeAndAfter/0.0.1/README.md
 
-icon:   https://tess.elixir-europe.org/assets/elixir/elixir-tess-219b707c4912e9c46c917a24ce72b464ec9f2fd56ce03dbcee8b2f6b9ac98a44.svg
+icon:   https://styleguide.ugent.be/files/uploads/logo_UGent_EN_RGB_2400_kleur_witbg.png
 
 link:   https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css
         https://fonts.googleapis.com/css?family=Lato:400,400italic,700
@@ -68,22 +68,82 @@ script: https://unpkg.com/leaflet@1.9.4/dist/leaflet.js
 
 -->
 
-# Slide with relevant context as a starter
+# Preserving data at UGent
+![img1](https://images.pexels.com/photos/158827/field-corn-air-frisch-158827.jpeg "Corn Fields Under White Clouds With Blue Sky during Daytime, by Pixabay from Pexels https://www.pexels.com/photo/corn-fields-under-white-clouds-with-blue-sky-during-daytime-158827/, CC0") This course shortly explains the role of data preservation in research verification and reuse, the main steps to preserve data and helps researchers decide which location is most suitable to preserve their data.
 
-...
+- Contact: (Name), Data Steward, Team Open Science, University Library. rdm.support@ugent.be
+- Learning outcomes:
+  • Describe the reasons why data should be preserved
+  • Outline the basic steps of preservation, including data appraisal/selection
+  • Choose a suitable preservation medium for their data
+- Eligibility for participation: Any researcher can watch their video at their own pace. Familiarity with Ghent University ICT/storage infrastructure is recommended. 
 
-## Context slide 
+## Data preservation in a nutshell
 
-...
+<iframe 
+  width="800" 
+  height="450" 
+  src="https://www.youtube.com/embed/UaiRAI-fwmw" 
+  title="Knowledge clip: Preserving Data" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+  allowfullscreen>
+</iframe>
 
-### Scope of this session
+## What do we mean by preservation
 
-This presentation will guide you through this session where we ...
+Preserving means more that simply not deleting data. **Preservation means**:
 
-- list learning outcomes
-- or description of what will happen in the session
-- ...
+> Actions to prevent data from becoming unavailable and unusable over time, for example because of: 
 
+* ‘Owners’ leaving
+* Outdated software or hardware
+* Storage media degradation
+* A lack of sufficient descriptive and contextual information to keep data understandable
+
+## Why preserve data?
+
+> Why is it important to preserve data? (Select **all** that apply.)
+
+<!-- data-randomize -->
+[[X]] To ensure future access and reuse of valuable information  
+[[X]] To enable verification and reproducibility of research results  
+[[ ]] To reduce the total amount of stored information in the world  
+[[X]] To protect cultural and historical heritage  
+[[ ]] Because data automatically preserves itself over time  
+[[X]] To comply with legal and ethical requirements  
+
+---
+<!-- data-randomize -->
+> What are some risks of **not** preserving data properly? (Select **all** that apply.)
+
+[[X]] Loss of irreplaceable research results  
+[[X]] Inability to reproduce experiments or findings  
+[[ ]] Increased innovation through data loss  
+[[X]] Damage to institutional or scientific credibility  
+[[ ]] Improved security through deletion of all old data  
+
+---
+
+## Preserving data in practice
+
+
+<iframe
+  src="https://ugent.h5p.com/content/1291866917768823107/embed"
+  aria-label="Data preservation in steps"
+  width="800"
+  height="600"
+  frameborder="0"
+  allowfullscreen="allowfullscreen"
+  allow="autoplay *; geolocation *; microphone *; camera *; midi *; encrypted-media *">
+</iframe>
+<script src="https://ugent.h5p.com/js/h5p-resizer.js" charset="UTF-8"></script>
+
+## License and citation
+
+This course is licensed under a [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.en). Please cite it as:
+
+> Oset, Paula. Blablablaba....  
 
 ```json   @JSONLD
 {
@@ -140,55 +200,3 @@ This presentation will guide you through this session where we ...
   ]
 }
 ```
-
-### Many training material types and file formats 
-
-           --{{0}}--
-Welcome, everyone! Today, we’re going to embark on ... (here comes the narrative in a fluent text
-
-              {{0-1}}
-***************
-
-> Question to solve
-
-<section class="flex-container">
-
-<div class="flex-child-1" style="min-width: 200px; margin-bottom: -10px">
-
-![](../images/04-activities.png)<!-- style = "width: 80px; padding:15px;"-->
-
-</div>
-
-<!-- class="flex-child-2" style="min-width: 300px" -->
-## Activity
-
-</section>
-
-<section class="flex-container">
-<!-- class="flex-child-1" style="min-width: 200px; margin-bottom: -10px"-->
-### 7 min ⌛ 
-
-<!-- class="flex-child-2" style="min-width: 300px" -->
-- List ...
-- Note down ...
-- Note down ...
-- Add ...             
-</section>
-
-****
-
-              --{{1}}--
-| header | header | header | header |
-| ----------------- | ------------------ | ------------------------ | ---- |
-| value |  value             |                          |    value |
-| value |  value         |                          |     value|
-
-              {{1}}
-*************
-
-| header | header | header | header |
-| ----------------- | ------------------ | ------------------------ | ---- |
-| value |  value             |                          |    value |
-| value |  value         |                          |     value|
-
-***********
