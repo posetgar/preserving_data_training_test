@@ -1,9 +1,13 @@
-/* ===========================================================
-   UGent Theme for LiaScript
-   Clean, modern, layout-safe styles
-   Primary: UGent Blue (#1E64C8)
-   Accent:  UGent Yellow (#FFD200)
-   =========================================================== */
+:root {
+  --main-color: #1E64C8;        /* UGent Blue */
+  --accent-color: #FFD200;      /* UGent Yellow */
+  --highlight-color: #FFE766;   /* Light yellow hover */
+  --button-bg: #FFD200;         /* Buttons */
+  --button-fg: #000000;         /* Button text */
+  --progress-color: #FFD200;    /* Progress bar + dots */
+  --nav-color: #FFD200;         /* Navigation arrows */
+  --quiz-correct: #1E64C8;      /* Optional: UGent blue correct mark */
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
 
