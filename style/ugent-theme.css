@@ -1,0 +1,151 @@
+/* ===========================================================
+   UGent Theme for LiaScript
+   Clean, modern, layout-safe styles
+   Font: Open Sans
+   Primary color: UGent Blue (#1E64C8)
+   =========================================================== */
+
+/* Google Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+/* Global font */
+body, .lia-content, .lia-slide, .lia-section {
+    font-family: "Open Sans", sans-serif !important;
+    color: #222;
+}
+
+/* ===========================================================
+   Colors
+   =========================================================== */
+:root {
+    --ugent-blue: #1E64C8;
+    --ugent-blue-dark: #184F9E;
+    --ugent-grey-light: #F5F7FA;
+    --ugent-grey-mid: #E5E8EB;
+    --ugent-grey-dark: #4A4A4A;
+}
+
+/* ===========================================================
+   Headings
+   =========================================================== */
+h1, h2, h3, h4 {
+    font-family: "Open Sans", sans-serif !important;
+    font-weight: 700;
+    color: var(--ugent-blue) !important;
+    margin-top: 1.2em;
+}
+
+/* H1 in section mode */
+.lia-h1 {
+    border-bottom: 3px solid var(--ugent-blue);
+    padding-bottom: 0.3em;
+}
+
+/* ===========================================================
+   Links
+   =========================================================== */
+a {
+    color: var(--ugent-blue) !important;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* ===========================================================
+   Sidebar (TOC)
+   =========================================================== */
+.lia-toc {
+    background: var(--ugent-blue) !important;
+}
+.lia-toc a {
+    color: white !important;
+}
+.lia-toc a:hover {
+    color: var(--ugent-grey-light) !important;
+}
+.lia-toc a.lia-active {
+    font-weight: 700;
+    background: var(--ugent-blue-dark) !important;
+}
+
+/* Search bar in TOC */
+.lia-search input {
+    background: white !important;
+    color: #222 !important;
+}
+
+/* ===========================================================
+   Accent Boxes
+   =========================================================== */
+
+/* Shared box style */
+.ugent-box {
+    padding: 1rem 1.2rem;
+    border-radius: 6px;
+    margin: 1.5rem 0;
+    border-left: 6px solid var(--ugent-blue);
+    background: var(--ugent-grey-light);
+}
+
+/* Box types */
+.ugent-example {
+    border-color: #1E64C8;
+    background: #F0F6FF;
+}
+.ugent-activity {
+    border-color: #2CA02C;
+    background: #F2FBF2;
+}
+.ugent-warning {
+    border-color: #E67E22;
+    background: #FFF4E6;
+}
+.ugent-learning {
+    border-color: #8E44AD;
+    background: #F7ECFF;
+}
+
+/* Headings inside boxes */
+.ugent-box h3, .ugent-box h4 {
+    margin-top: 0;
+}
+
+/* ===========================================================
+   Code Blocks
+   =========================================================== */
+pre, code {
+    font-family: "Fira Code", monospace;
+    background: var(--ugent-grey-mid) !important;
+    border-radius: 4px;
+    padding: 0.3rem 0.5rem;
+}
+
+/* ===========================================================
+   Tables
+   =========================================================== */
+table {
+    border-collapse: collapse !important;
+    margin: 1.2em 0;
+    width: 100%;
+}
+table th {
+    background: var(--ugent-blue);
+    color: white;
+    padding: 0.6em;
+}
+table td {
+    border: 1px solid var(--ugent-grey-mid);
+    padding: 0.6em;
+}
+
+/* ===========================================================
+   Quizzes / Interactive Elements
+   =========================================================== */
+.lia-quiz {
+    border: 2px solid var(--ugent-blue);
+    border-radius: 6px;
+    padding: 1rem;
+}
+.lia-btn {
+    background: var(--ugent-blue) !important;
