@@ -1,170 +1,213 @@
 <!--
-title: "Liascript Presentations"
+link: https://cdn.jsdelivr.net/gh/posetgar/preserving_data_training_test@main/style/ugent-theme.css
 
-import: https://raw.githubusercontent.com/LiaScript/CodeRunner/master/README.md
-        https://raw.githubusercontent.com/LiaTemplates/BeforeAndAfter/0.0.1/README.md
-
-icon:   https://styleguide.ugent.be/files/uploads/logo_UGent_EN_RGB_2400_kleur_witbg.png
-
-link:   https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css
-        https://fonts.googleapis.com/css?family=Lato:400,400italic,700
-        style.css
-
-@runR: @LIA.eval(`["main.R"]`, `none`, `Rscript main.R`)
-
-@JSONLD
-<script run-once>
-  let json = @0 
-
-  const script = document.createElement('script');
-  script.type = 'application/ld+json';
-  script.text = JSON.stringify(json);
-
-  document.head.appendChild(script);
-
-  // this is only needed to prevent and output,
-  // as long as the result of a script is undefined,
-  // it is not shown or rendered within LiaScript
-  console.debug("added json to head")
-</script>
-@end
-
-@style
-.flex-container {
-    display: flex;
-    flex-wrap: wrap; /* Allows the items to wrap as needed */
-    align-items: stretch;
-    gap: 10px;
-}
-
-.flex-child,
-.flex-child-1 { flex: 1; }
-.flex-child-2 { flex: 2; }
-.flex-child-3 { flex: 3; }
-.flex-child-4 { flex: 4; }
-.flex-child-5 { flex: 5; }
-.flex-child-6 { flex: 6; }
-.flex-child-7 { flex: 7; }
-.flex-child-8 { flex: 8; }
-
-@media (max-width: 500px) {
-    .flex-child,
-    .flex-child-1,
-    .flex-child-2,
-    .flex-child-3,
-    .flex-child-4,
-    .flex-child-5,
-    .flex-child-6,
-    .flex-child-7,
-    .flex-child-8 {
-        flex: 100%; /* Makes the child divs take up the full width on slim devices */
-        margin-right: 0; /* Removes the right margin */
-    }
-}
-@end
-
-link:   https://unpkg.com/leaflet@1.9.4/dist/leaflet.css
-script: https://unpkg.com/leaflet@1.9.4/dist/leaflet.js
-
+title: Research Data Management in practice
+author:     Paula Oset Garcia
+email:      rdm.support@ugent.be
+comment:    This course introduces...
+icon:       https://styleguide.ugent.be/files/uploads/logo_UGent_EN_RGB_2400_kleur_witbg.png
+repository: https://github.com/posetgar/preserving_data_course
+language:   en
+@MERMAID:   true
+mode: section
 -->
 
-# Preserving data at UGent
-![img1](https://images.pexels.com/photos/158827/field-corn-air-frisch-158827.jpeg "Corn Fields Under White Clouds With Blue Sky during Daytime, by Pixabay from Pexels https://www.pexels.com/photo/corn-fields-under-white-clouds-with-blue-sky-during-daytime-158827/, CC0") This course shortly explains the role of data preservation in research verification and reuse, the main steps to preserve data and helps researchers decide which location is most suitable to preserve their data.
+#  RDM Training Design & Evaluation in Practice
 
-- Contact: (Name), Data Steward, Team Open Science, University Library. rdm.support@ugent.be
-- Learning outcomes:
-  • Describe the reasons why data should be preserved
-  • Outline the basic steps of preservation, including data appraisal/selection
-  • Choose a suitable preservation medium for their data
-- Eligibility for participation: Any researcher can watch their video at their own pace. Familiarity with Ghent University ICT/storage infrastructure is recommended. 
-
-## Data preservation in a nutshell
-
-<iframe 
-  width="800" 
-  height="450" 
-  src="https://www.youtube.com/embed/UaiRAI-fwmw" 
-  title="Knowledge clip: Preserving Data" 
-  frameborder="0" 
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-  allowfullscreen>
-</iframe>
-
-## What do we mean by preservation
-
-Preserving means more that simply not deleting data. **Preservation means**:
-
-> Actions to prevent data from becoming unavailable and unusable over time, for example because of: 
-
-* ‘Owners’ leaving
-* Outdated software or hardware
-* Storage media degradation
-* A lack of sufficient descriptive and contextual information to keep data understandable
-
-## Why preserve data?
-
-> Why is it important to preserve data? (Select **all** that apply.)
-
-<!-- data-randomize -->
-[[X]] To ensure future access and reuse of valuable information  
-[[X]] To enable verification and reproducibility of research results  
-[[ ]] To reduce the total amount of stored information in the world  
-[[X]] To protect cultural and historical heritage  
-[[ ]] Because data automatically preserves itself over time  
-[[X]] To comply with legal and ethical requirements  
-
----
-<!-- data-randomize -->
-> What are some risks of **not** preserving data properly? (Select **all** that apply.)
-
-[[X]] Loss of irreplaceable research results  
-[[X]] Inability to reproduce experiments or findings  
-[[ ]] Increased innovation through data loss  
-[[X]] Damage to institutional or scientific credibility  
-[[ ]] Improved security through deletion of all old data  
+This course corresponds to Module 4.2 in the [University of Vienna Data Steward Certificate Course.](https://rdm.univie.ac.at/data-stewards-at-the-university/become-a-data-steward/)
 
 ---
 
-## Preserving data in practice
+## Course information
+
+<h3>Course description</h3>
+This session provides a practical introduction to designing and evaluating training in the domain of Research Data Management (RDM). It builds on the basic didactic concepts introduced in the previous session (4.1) and applies them through the design of an RDM training. In this follow-up session, the focus shifts from theory to practice. We will concentrate on actively thinking through how RDM training can be designed, adapted, and evaluated in your own context. Working in small groups, you will identify training needs, define the characteristics of your target audience, formulate learning objectives, and explore suitable learning activities.
+
+By the end of the session, you will have taken the first steps toward developing an RDM training concept that is aligned with learner needs, supported by clear outcomes, and grounded in thoughtful instructional design.
+
+During the session, the following topics will be addressed:
+
+- Brief introduction to Ghent University Data Stewards training  
+- Training example: mapping an RDM course delivered by Ghent University data stewards to the ABC learning design method  
+- Overview of different RDM learning activities  
+- Evaluating and adapting training: how to include evaluation in training and adapt according to feedback or delivery method  
+- Hands-on work: getting started with the design of RDM training
 
 
+<div class="ugent-box ugent-learning">
+<h3>Learning outcomes</h3>
+<p>Upon completion of this session, students will be able to:</p>
+
+<p>- Explain why investing time in training design is essential and describe the overall training lifecycle (from needs analysis to evaluation)</p>
+<p>- Analyze the characteristics and needs of the target audience</p>
+<p>- Identify and define the topics, learning objectives, and outcomes for the course</p>
+<p>- Propose appropriate learning activities and learning types for the different course topics</p>
+<p>- Sketch a plan to include assessment and feedback mechanisms for the course</p> 
+<p>- Evaluate the effectiveness of the learning activities proposed by peers</p>
+<p>- Process and incorporate feedback into their own training design or concept</p> 
+<p>- Develop a sense of ownership and responsibility for their own learning</p>
+</div>
+
+
+<h3>Learning outcomes</h3>
+Upon completion of this session, students will be able to:
+
+- Explain why investing time in training design is essential and describe the overall training lifecycle (from needs analysis to evaluation)
+- Analyze the characteristics and needs of the target audience  
+- Identify and define the topics, learning objectives, and outcomes for the course  
+- Propose appropriate learning activities and learning types for the different course topics  
+- Sketch a plan to include assessment and feedback mechanisms for the course  
+- Evaluate the effectiveness of the learning activities proposed by peers  
+- Process and incorporate feedback into their own training design or concept  
+- Develop a sense of ownership and responsibility for their own learning
+
+<h3>Methods</h3>
+This lesson includes short lectures and group discussion, as well as smaller group work tasks. It is an interactive session involving knowledge-sharing and discussion among learners.
+
+<h3>Assignment</h3>
+Individually designing a training concept using the template given (2-3 pages).
+The details of the assignment will be discussed during the live session and uploaded to Moodle.
+
+## Why spending time on training design?
+
+<h3>Slides</h3>
 <iframe
-  src="https://ugent.h5p.com/content/1291866917768823107/embed"
-  aria-label="Data preservation in steps"
-  width="800"
-  height="600"
+  src="https://ugent.h5p.com/content/1292761112369681927/embed"
+  width="100%"
+  height="670"
   frameborder="0"
   allowfullscreen="allowfullscreen"
-  allow="autoplay *; geolocation *; microphone *; camera *; midi *; encrypted-media *">
+  allow="geolocation *; microphone *; camera *; midi *; encrypted-media *">
 </iframe>
-<script src="https://ugent.h5p.com/js/h5p-resizer.js" charset="UTF-8"></script>
 
-## License and citation
+<h3>Introduction</h3>
+In the last two previous years, we asked participants of the module how much time they spent on different aspects of training design? These were the results:
 
-This course is licensed under a [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.en). Please cite it as:
+Scale
 
-> Oset, Paula. Blablablaba.... [![DOI](https://sandbox.zenodo.org/badge/1080457223.svg)](https://handle.test.datacite.org/10.5072/zenodo.389626)
- 
+**1** I do not spend any time on this aspect
+**2** I spend **little** time on this aspect
+**3** I spend a **moderate** amount of time on this aspect
+**4** I spend **quite a lot** of time on this aspect
+**5** I spend **most** of my time on this aspect
 
-```json   @JSONLD
-{
-  "@context": "http://schema.org",
-  "@id": "https://dev.tess.elixir-europe.org/materials/preserving-data-at-ugent",
-  "@type": "LearningResource",
-  "dct:conformsTo": {
-    "@type": "CreativeWork",
-    "@id": "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE"
-  },
-  "name": "Preserving data at UGent",
-  "url": "https://liascript.github.io/course/?https://raw.githubusercontent.com/posetgar/preserving_data_training_test/refs/heads/main/README.md#1",
-  "description": "This course shortly explains the role of data preservation in research verification and reuse, the main steps to preserve data and helps researchers decide which location is most suitable to preserve their data.",
-  "author": [
-    {
-      "@type": "Person",
-      "name": "Paula Oset Garcia"
-    }
-  ],
-  "license": "https://spdx.org/licenses/CC-BY-4.0.html"
-}
 
-```
+| Aspect                               | Average (2024–2025) |
+| ------------------------------------ | -------------------:|
+| Analyzing training needs             |                 2.9 |
+| Defining learning objectives/outcomes|                 2.7 |
+| Defining the audience                |                 2.6 |
+| **Creating content & learning activities** |               **4.3** |
+| Designing assessment methods         |                 2.1 |
+| Training evaluation                  |                 1.8 |
+
+As you can see, most people spend most of their time in creating content, spend the least ammount of time in assessment and evaluation, and spend limited ammount of time in the training design phase.
+
+
+<h3> Why spending time on training design? </h3>
+
+Good training does not happen by accident. Investing time in training design ensures that the learning experience is purposeful, relevant, and effective. By consciously planning who the training is for, what it should achieve, and how it will be delivered, you create a structure that supports both the trainer and the learners.
+
+<details>
+  <summary><strong>1. Align training with real needs</strong></summary>
+
+If you understand who your learners are and what they struggle with, you can tailor the training to what truly matters.
+
+**Tip:** Instead of giving a generic RDM overview to postdocs, you focus on *GDPR in practice* and *repository selection* because that’s where they typically struggle.
+
+</details>
+
+<details>
+  <summary><strong>2. Define clear learning outcomes</strong></summary>
+
+Clear outcomes help you decide what to include, what to skip, and how to check whether learning occurred.
+
+**Tip:** Instead of “understand DMPs”, define: *“Learners can complete the data summary table for their own project.”* For policy sessions: *“Learners can identify which RDM and Open Science policies apply to their project.”*
+
+</details>
+
+<details>
+  <summary><strong>3. Choose appropriate learning activities</strong></summary>
+
+Spending time on designing makes you plan **how** learners will learn, not just **what** you will present. Learning activities become meaningful, because they support specific outcomes.
+
+**Tip:** Rather than only presenting slides about file naming, use a short activity where they fix poorly named files. Instead of just showing a FAIR checklist, ask learners to compare datasets in repositories and discuss FAIRness.
+
+</details>
+
+<details>
+  <summary><strong>4. Increase engagement and motivation</strong></summary>
+
+Good design keeps learners active rather than passive.
+
+**Tip:** Break long webinars into short blocks of content, and include polls, quizzes, or breakout discussions. Let participants bring **their own RDM issues** and discuss them in small groups.
+
+</details>
+
+<details>
+  <summary><strong>5. Make evaluation and improvement possible</strong></summary>
+
+With clear goals and structure, it is easier to assess whether the training worked — and to adapt based on feedback or delivery mode.
+
+**Tip:** Instead of collecting only an end‑of‑course survey, include assessment/feedback moments during the session than can help you evaluate specific activities. After each edition, document what to keep, drop, or change.
+
+</details>
+
+<details>
+  <summary><strong>6. Use time and resources efficiently</strong></summary>
+
+Thoughtful design prevents overload, avoids unnecessary content, and focuses on what truly matters.
+
+**Tip:** Rather than preparing an extensive slide deck covering all aspects of RDM, you may choose to focus on one key problem to work on (e.g. storage). You can also design reusable activities that can be adapted for future sessions. 
+
+</details>
+
+<br>
+
+
+## Training design: what does it entail?
+
+Training design is more than preparing slides or selecting activities. It is a
+structured process that helps you create learning experiences that are relevant,
+effective, and aligned with the needs of your audience. Most training design
+approaches share a set of common components and follow a recurring cycle.
+
+<h3> Key components of a training design cycle </h3>
+
+- **Analysis**: Understanding your learners, their context, and their needs.
+- **Design**: Translating needs into clear learning outcomes and selecting appropriate methods.
+- **Development**: Creating learning materials, activities, and assessments.
+- **Implementation**: Delivering the training in practice.
+- **Evaluation**: Gathering feedback and assessing the effectiveness of the training.
+
+These steps appear in many instructional design models. One of the most well‑known examples is the **ADDIE framework** (Analysis – Design – Development – Implementation – Evaluation). Other models (e.g., SAM, Backward Design, 5Es) offer similar guidance but with different emphases.
+
+<h3> Why use a model? </h3>
+
+A training design model helps you:
+
+- **Stay focused** on the purpose of the training.
+- **Ensure alignment** between learning needs, outcomes, methods, and assessments.
+- **Avoid jumping prematurely into content creation**, which often leads to overload or materials that do not support learning.
+- **Build a structure that supports evaluation and continuous improvement**.
+
+Models give you a roadmap, but they are not meant to be followed rigidly.
+
+It's important to keep in mind that training design is **iterative**, not linear. Although the model starts with *Analysis* and ends with *Evaluation*, in practice you will often:
+
+- revisit earlier decisions,
+- refine learning outcomes after testing activities,
+- adjust methods based on learner feedback,
+- update materials when changing context or delivery format.
+
+**Evaluation is part of every stage.**  
+You are constantly checking whether decisions support the intended learning outcomes.
+
+It is tempting to start with *Development* (e.g., making slides), but investing time in *Analysis* and *Design* saves effort later and results in a stronger learning experience.
+
+**What comes next**
+
+In the next part of the course, we will explore each stage of the training design cycle in more detail and apply the steps to your own training concept.
+
+
+
