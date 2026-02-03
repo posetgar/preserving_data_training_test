@@ -156,10 +156,12 @@ table td {
 }
 
 /********************************************
- * UGent-styled accordion (<details>/<summary>)
+ * UGent styling for LiaScript <liia-details>
  ********************************************/
 
-details {
+/* The accordion outer shell */
+liia-details {
+  display: block;
   border: 1px solid #d7dbe0;
   border-radius: 6px;
   padding: 0.8em 1em;
@@ -168,38 +170,41 @@ details {
   transition: background 0.2s ease-in-out, border-color 0.2s;
 }
 
-details[open] {
-  background: #eef4ff;          /* subtle UGent light blue */
-  border-color: #1f3c88;        /* UGent main blue */
+/* When open */
+liia-details[open] {
+  background: #eef4ff;   /* UGent soft blue */
+  border-color: #1f3c88; /* UGent main blue */
 }
 
-details > summary {
-  font-family: inherit;         /* match course font */
+/* The clickable title */
+liia-summary {
+  font-family: inherit;
   font-weight: 600;
   font-size: 1.1em;
   cursor: pointer;
-  list-style: none;
   position: relative;
   padding-left: 1.6em;
-  color: #1f3c88;               /* UGent blue text */
+  color: #1f3c88;
   user-select: none;
 }
 
-details > summary::-webkit-details-marker {
+/* Remove marker (LiaScript already hides the native one) */
+liia-summary::marker {
   display: none;
 }
 
-/* Custom UGent-blue arrow */
-details > summary::before {
+/* Custom UGent blue arrow */
+liia-summary::before {
   content: "▶";
   position: absolute;
   left: 0;
-  top: 0.2em;
+  top: 0.15em;
   font-size: 0.9em;
-  color: #1f3c88;         
+  color: #1f3c88;
   transition: transform 0.2s ease-in-out;
 }
 
-details[open] > summary::before {
+/* Rotate arrow when opened */
+liia-details[open] > liia-summary::before {
   transform: rotate(90deg);
 }
