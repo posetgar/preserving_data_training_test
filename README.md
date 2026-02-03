@@ -91,74 +91,6 @@ The details of the assignment will be discussed during the live session and uplo
 <h3>Introduction</h3>
 In the last two previous years, we asked participants of the module how much time they spent on different aspects of training design? These were the results:
 
-https://cdn.jsdelivr.net/npm/chart.js
-
-<canvas id="rdm-radar" style="max-width: 760px; width: 100%;"></canvas>
-
-<script>
-(async () => {
-  // CSV hosted in your repository (you can add ?v=2 to bust cache after edits)
-  const csvUrl = "https://raw.githubusercontent.com/posetgar/preserving_data_training_test/main/data/training_design_time.csv";
-
-  const text = await fetch(csvUrl).then(r => r.text());
-  const rows = text.trim().split(/\r?\n/).map(r => r.split(","));
-
-  // Expecting header row like: Aspect,2024,2025
-  const headers = rows[0] || [];
-  const labels  = rows.slice(1).map(r => r[0]);
-  const y2024   = rows.slice(1).map(r => +r[1]);
-  const y2025   = rows.slice(1).map(r => +r[2]);
-
-  // UGent colors
-  const UGENT_BLUE   = "#1E64C8";
-  const UGENT_YELLOW = "#FFD200";
-
-  const ctx = document.getElementById("rdm-radar").getContext("2d");
-  new Chart(ctx, {
-    type: "radar",
-    data: {
-      labels,
-      datasets: [
-        {
-          label: headers[1] || "2024",
-          data: y2024,
-          backgroundColor: "rgba(30,100,200,0.25)",
-          borderColor: UGENT_BLUE,
-          pointBackgroundColor: UGENT_BLUE,
-          borderWidth: 2
-        },
-        {
-          label: headers[2] || "2025",
-          data: y2025,
-          backgroundColor: "rgba(255,210,0,0.25)",
-          borderColor: UGENT_YELLOW,
-          pointBackgroundColor: UGENT_YELLOW,
-          borderWidth: 2
-        }
-      ]
-    },
-    options: {
-      responsive: true,
-      plugins: {
-        legend: { position: "top" },
-        title: {
-          display: true,
-          text: "How much time do you spend on different aspects of training design?"
-        },
-        tooltip: { enabled: true }
-      },
-      scales: {
-        r: {
-          suggestedMin: 0,
-          suggestedMax: 5,
-          ticks: { stepSize: 1 }
-        }
-      }
-    }
-  });
-})();
-</script>
-
 Scale
 
 **1** I do not spend any time on this aspect
@@ -282,5 +214,6 @@ You are constantly checking whether decisions support the intended learning outc
 It is tempting to start with *Development* (e.g., making slides), but investing time in *Analysis* and *Design* saves effort later and results in a stronger learning experience.
 
 **What comes next**
+
 
 In the next part of the course, we will explore each stage of the training design cycle in more detail and apply the steps to your own training concept.
