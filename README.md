@@ -18,7 +18,7 @@ This course corresponds to Module 4.2 in the [University of Vienna Data Steward 
 
 ---
 
-## Course information
+<h2>Course information</h2>
 
 <h3>Course description</h3>
 This session provides a practical introduction to designing and evaluating training in the domain of Research Data Management (RDM). It builds on the basic didactic concepts introduced in the previous session (4.1) and applies them through the design of an RDM training. In this follow-up session, the focus shifts from theory to practice. We will concentrate on actively thinking through how RDM training can be designed, adapted, and evaluated in your own context. Working in small groups, you will identify training needs, define the characteristics of your target audience, formulate learning objectives, and explore suitable learning activities.
@@ -34,7 +34,7 @@ During the session, the following topics will be addressed:
 - Hands-on work: getting started with the design of RDM training
 
 
-<div class="ugent-box ugent-learning">
+<div class="ugent-box ugent-example">
 <h3>Learning outcomes</h3>
 <p>Upon completion of this session, students will be able to:</p>
 
@@ -49,24 +49,32 @@ During the session, the following topics will be addressed:
 </div>
 
 
-<h3>Learning outcomes</h3>
-Upon completion of this session, students will be able to:
-
-- Explain why investing time in training design is essential and describe the overall training lifecycle (from needs analysis to evaluation)
-- Analyze the characteristics and needs of the target audience  
-- Identify and define the topics, learning objectives, and outcomes for the course  
-- Propose appropriate learning activities and learning types for the different course topics  
-- Sketch a plan to include assessment and feedback mechanisms for the course  
-- Evaluate the effectiveness of the learning activities proposed by peers  
-- Process and incorporate feedback into their own training design or concept  
-- Develop a sense of ownership and responsibility for their own learning
-
 <h3>Methods</h3>
 This lesson includes short lectures and group discussion, as well as smaller group work tasks. It is an interactive session involving knowledge-sharing and discussion among learners.
 
 <h3>Assignment</h3>
 Individually designing a training concept using the template given (2-3 pages).
 The details of the assignment will be discussed during the live session and uploaded to Moodle.
+
+<div class="ugent-box ugent-example">
+<h3>Example</h3>
+<p>This is an example with UGent styling.</p>
+</div>
+
+<div class="ugent-box ugent-activity">
+<h3>Activity</h3>
+<p>Try applying the ADDIE model to your own training.</p>
+</div>
+
+<div class="ugent-box ugent-learning">
+<h3>Learning Outcome</h3>
+<p>You will be able to identify key instructional design principles.</p>
+</div>
+
+<div class="ugent-box ugent-warning">
+<h3>Warning</h3>
+<p>Do not skip the analysis phase—it saves time later!</p>
+</div>
 
 ## Why spending time on training design?
 
@@ -208,6 +216,3 @@ It is tempting to start with *Development* (e.g., making slides), but investing 
 **What comes next**
 
 In the next part of the course, we will explore each stage of the training design cycle in more detail and apply the steps to your own training concept.
-
-
-
