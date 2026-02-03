@@ -4,53 +4,87 @@
   <meta charset="utf-8" />
   <title>Training Design Time (Radar)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
   <style>
     :root {
       --ugent-blue: #1E64C8;
       --ugent-yellow: #FFD200;
+      --ugent-grey-light: #F5F7FA;
     }
-    html, body {
-      margin: 0; padding: 0; background: #fff;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Open Sans", sans-serif;
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Open Sans", Arial, sans-serif;
+      background: #ffffff;
       color: #222;
     }
+
     .wrap {
-      max-width: 860px; margin: 0 auto; padding: 12px 16px;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 12px 16px;
     }
+
     h1 {
-      font-size: 18px; margin: 8px 0 12px 0; color: var(--ugent-blue);
-      text-align: left;
+      font-size: 18px;
+      margin: 8px 0 16px 0;
+      text-align: center;
+      color: var(--ugent-blue);
     }
-    canvas { width: 100% !important; max-width: 820px; }
+
+    /* Responsive container that forces canvas to maintain aspect ratio */
+    .chart-container {
+      position: relative;
+      width: 100%;
+      max-width: 820px;
+      margin: 0 auto;
+
+      /* Ensures the chart stays visible and sized correctly */
+      aspect-ratio: 1 / 1;
+      min-height: 420px; /* fallback for browsers without aspect-ratio */
+    }
+
+    canvas {
+      width: 100% !important;
+      height: 100% !important;
+      display: block;
+    }
   </style>
 </head>
+
 <body>
   <div class="wrap">
     <h1>How much time do you spend on different aspects of training design?</h1>
-    <canvas id="rdm-radar"></canvas>
+
+    <div class="chart-container">
+      <canvas id="rdm-radar"></canvas>
+    </div>
   </div>
 
   <script>
   (async () => {
-    // 1) Load your CSV (add ?v=... to bust cache after updates if needed)
+    // CSV from your repository
     const csvUrl = "https://raw.githubusercontent.com/posetgar/preserving_data_training_test/main/data/training_design_time.csv";
+
     const text = await fetch(csvUrl, { cache: "no-cache" }).then(r => r.text());
 
-    // 2) Parse simple CSV (comma-separated, one header row)
+    // Parse CSV
     const rows = text.trim().split(/\r?\n/).map(r => r.split(","));
-    const headers = rows[0];                            // ["Aspect","2024","2025"]
-    const labels = rows.slice(1).map(r => r[0]);        // aspects
-    const y2024  = rows.slice(1).map(r => +r[1] || 0);  // numbers
-    const y2025  = rows.slice(1).map(r => +r[2] || 0);
+    const headers = rows[0];
+    const labels = rows.slice(1).map(r => r[0]);
+    const y2024 = rows.slice(1).map(r => +r[1] || 0);
+    const y2025 = rows.slice(1).map(r => +r[2] || 0);
 
     // UGent colors
-    const UGENT_BLUE   = "#1E64C8";
+    const UGENT_BLUE = "#1E64C8";
     const UGENT_YELLOW = "#FFD200";
 
-    // 3) Build radar chart
     const ctx = document.getElementById("rdm-radar").getContext("2d");
+
     new Chart(ctx, {
       type: "radar",
       data: {
@@ -76,7 +110,7 @@
       },
       options: {
         responsive: true,
-        maintainAspectRatio: false,
+        maintainAspectRatio: false, /* works with aspect-ratio container */
         plugins: {
           legend: { position: "top" },
           tooltip: { enabled: true }
@@ -88,7 +122,10 @@
             ticks: { stepSize: 1, showLabelBackdrop: false },
             grid: { color: "rgba(0,0,0,0.15)" },
             angleLines: { color: "rgba(0,0,0,0.15)" },
-            pointLabels: { color: "#333", font: { size: 12 } }
+            pointLabels: {
+              color: "#333",
+              font: { size: 13 }
+            }
           }
         },
         elements: {
@@ -98,5 +135,6 @@
     });
   })();
   </script>
+
 </body>
 </html>
