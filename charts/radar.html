@@ -6,13 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- Chart.js -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  https://cdn.jsdelivr.net/npm/chart.js</script>
 
   <style>
     :root {
       --ugent-blue: #1E64C8;
       --ugent-yellow: #FFD200;
-      --ugent-grey-light: #F5F7FA;
     }
 
     body {
@@ -24,28 +23,32 @@
     }
 
     .wrap {
-      max-width: 860px;
+      width: 100%;
+      max-width: 900px;
       margin: 0 auto;
-      padding: 12px 16px;
+      padding: 16px;
+      box-sizing: border-box;
     }
 
     h1 {
-      font-size: 18px;
-      margin: 8px 0 16px 0;
+      font-size: 20px;
+      margin-bottom: 12px;
       text-align: center;
       color: var(--ugent-blue);
     }
 
-    /* Responsive container that forces canvas to maintain aspect ratio */
+    /* Responsive radar container */
     .chart-container {
       position: relative;
       width: 100%;
-      max-width: 820px;
+      max-width: 650px;
       margin: 0 auto;
 
-      /* Ensures the chart stays visible and sized correctly */
-      aspect-ratio: 1 / 1;
-      min-height: 420px; /* fallback for browsers without aspect-ratio */
+      /* NEW: Adaptive height based on viewport width */
+      height: min(650px, 80vw);
+
+      /* A little bottom margin so labels don't get clipped */
+      padding-bottom: 20px;
     }
 
     canvas {
@@ -67,19 +70,16 @@
 
   <script>
   (async () => {
-    // CSV from your repository
     const csvUrl = "https://raw.githubusercontent.com/posetgar/preserving_data_training_test/main/assets/training_design_time.csv";
 
     const text = await fetch(csvUrl, { cache: "no-cache" }).then(r => r.text());
-
-    // Parse CSV
     const rows = text.trim().split(/\r?\n/).map(r => r.split(","));
+
     const headers = rows[0];
     const labels = rows.slice(1).map(r => r[0]);
     const y2024 = rows.slice(1).map(r => +r[1] || 0);
     const y2025 = rows.slice(1).map(r => +r[2] || 0);
 
-    // UGent colors
     const UGENT_BLUE = "#1E64C8";
     const UGENT_YELLOW = "#FFD200";
 
@@ -93,7 +93,7 @@
           {
             label: headers[1] || "2024",
             data: y2024,
-            backgroundColor: "rgba(30,100,200,0.18)",
+            backgroundColor: "rgba(30,100,200,0.15)",
             borderColor: UGENT_BLUE,
             pointBackgroundColor: UGENT_BLUE,
             borderWidth: 2
@@ -110,26 +110,36 @@
       },
       options: {
         responsive: true,
-        maintainAspectRatio: false, /* works with aspect-ratio container */
+        maintainAspectRatio: false,
+        layout: {
+          padding: 20
+        },
         plugins: {
-          legend: { position: "top" },
+          legend: { 
+            position: "top",
+            labels: { font: { size: 14 } }   /* bigger legend font */
+          },
           tooltip: { enabled: true }
         },
         scales: {
           r: {
+            angleLines: { color: "rgba(0,0,0,0.25)" },
+            grid: { color: "rgba(0,0,0,0.18)" },
             suggestedMin: 0,
             suggestedMax: 5,
-            ticks: { stepSize: 1, showLabelBackdrop: false },
-            grid: { color: "rgba(0,0,0,0.15)" },
-            angleLines: { color: "rgba(0,0,0,0.15)" },
+            ticks: { 
+              stepSize: 1,
+              backdropPadding: 2,
+              font: { size: 14 }    /* bigger scale numbers */
+            },
             pointLabels: {
               color: "#333",
-              font: { size: 13 }
+              font: { size: 16 },   /* bigger category labels */
             }
           }
         },
         elements: {
-          line: { tension: 0.2 }
+          line: { tension: 0.15 }
         }
       }
     });
