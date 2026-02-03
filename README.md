@@ -91,6 +91,78 @@ The details of the assignment will be discussed during the live session and uplo
 <h3>Introduction</h3>
 In the last two previous years, we asked participants of the module how much time they spent on different aspects of training design? These were the results:
 
+<!-- Chart.js library -->
+https://cdn.jsdelivr.net/npm/chart.js</script>
+
+<!-- Canvas placeholder -->
+<canvas id="rdm-radar" style="max-width: 760px; width: 100%;"></canvas>
+
+<script>
+(async () => {
+  // 1) Load CSV (raw GitHub URL to your CSV file)
+  const csvUrl = "https://raw.githubusercontent.com/posetgar/preserving_data_training_test/main/data/training_design_time.csv";
+
+  const text = await fetch(csvUrl).then(r => r.text());
+  const rows = text.trim().split(/\r?\n/).map(r => r.split(","));
+
+  // 2) Extract labels & datasets
+  const headers = rows[0];                    // ["Aspect","2024","2025"]
+  const labels  = rows.slice(1).map(r => r[0]);
+  const y2024   = rows.slice(1).map(r => +r[1]);
+  const y2025   = rows.slice(1).map(r => +r[2]);
+
+  // UGent colors
+  const UGENT_BLUE   = "#1E64C8";
+  const UGENT_YELLOW = "#FFD200";
+
+  // 3) Create radar chart
+  const ctx = document.getElementById("rdm-radar").getContext("2d");
+  new Chart(ctx, {
+    type: "radar",
+    data: {
+      labels,
+      datasets: [
+        {
+          label: headers[1] || "2024",
+          data: y2024,
+          backgroundColor: "rgba(30,100,200,0.25)",
+          borderColor: UGENT_BLUE,
+          pointBackgroundColor: UGENT_BLUE,
+          borderWidth: 2
+        },
+        {
+          label: headers[2] || "2025",
+          data: y2025,
+          backgroundColor: "rgba(255,210,0,0.25)",
+          borderColor: UGENT_YELLOW,
+          pointBackgroundColor: UGENT_YELLOW,
+          borderWidth: 2
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { position: "top" },
+        tooltip: { enabled: true },
+        title: {
+          display: true,
+          text: "How much time do you spend on different aspects of training design?"
+        }
+      },
+      scales: {
+        r: {
+          suggestedMin: 0,
+          suggestedMax: 5,
+          ticks: { stepSize: 1 }
+        }
+      }
+    }
+  });
+})();
+</script>
+
+
 Scale
 
 **1** I do not spend any time on this aspect
