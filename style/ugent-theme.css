@@ -154,3 +154,52 @@ table th {
 table td {
     border: 1px solid var(--ugent-grey-mid);
 }
+
+/********************************************
+ * UGent-styled accordion (<details>/<summary>)
+ ********************************************/
+
+details {
+  border: 1px solid #d7dbe0;
+  border-radius: 6px;
+  padding: 0.8em 1em;
+  margin: 1em 0;
+  background: #fafafa;
+  transition: background 0.2s ease-in-out, border-color 0.2s;
+}
+
+details[open] {
+  background: #eef4ff;          /* subtle UGent light blue */
+  border-color: #1f3c88;        /* UGent main blue */
+}
+
+details > summary {
+  font-family: inherit;         /* match course font */
+  font-weight: 600;
+  font-size: 1.1em;
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+  padding-left: 1.6em;
+  color: #1f3c88;               /* UGent blue text */
+  user-select: none;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Custom UGent-blue arrow */
+details > summary::before {
+  content: "▶";
+  position: absolute;
+  left: 0;
+  top: 0.2em;
+  font-size: 0.9em;
+  color: #1f3c88;         
+  transition: transform 0.2s ease-in-out;
+}
+
+details[open] > summary::before {
+  transform: rotate(90deg);
+}
